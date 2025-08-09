@@ -1,35 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Rocket, User, Briefcase, Mail, ExternalLink } from 'lucide-react';
 
+// Link to the Inter font from Google Fonts.
+// This ensures the custom font is loaded and applied correctly.
+const fontLink = (
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+);
+
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
 
+  // Defines the navigation links and their corresponding icons and IDs.
   const navLinks = [
     { name: 'About', id: 'about', icon: <User /> },
     { name: 'Projects', id: 'projects', icon: <Briefcase /> },
     { name: 'Contact', id: 'contact', icon: <Mail /> },
   ];
 
+  // Toggles the mobile menu open and closed.
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleScroll = () => {
-    const sections = ['hero', 'about', 'projects', 'contact'];
-    const scrollPosition = window.scrollY + window.innerHeight / 2;
-
-    for (const section of sections) {
-      const element = document.getElementById(section);
-      if (element && scrollPosition >= element.offsetTop && scrollPosition < element.offsetTop + element.offsetHeight) {
-        setActiveSection(section);
-        break;
-      }
-    }
-  };
-
+  // This useEffect hook listens for scroll events to determine which section
+  // is currently in view and updates the activeSection state accordingly.
+  // This highlights the current section in the navigation bar.
   useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['hero', 'about', 'projects', 'contact'];
+      // The scroll position is adjusted by half the window height to
+      // trigger the change when the section is in the middle of the screen.
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element && scrollPosition >= element.offsetTop && scrollPosition < element.offsetTop + element.offsetHeight) {
+          setActiveSection(section);
+          break;
+        }
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
+    // Cleanup function to remove the event listener when the component unmounts.
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -66,6 +83,8 @@ const App = () => {
 
   return (
     <div className="bg-gray-950 text-gray-100 font-inter">
+      {/* Load the Inter font using a link tag */}
+      {fontLink}
       {/* Header and Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-gray-950/70 backdrop-blur-md">
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -140,6 +159,7 @@ const App = () => {
                   src="https://i.postimg.cc/jSLDpnGt/nateavatar.png"
                   alt="Nathaniel Tannis"
                   className="w-full h-full object-cover"
+                  onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/256x256/1e293b/d1d5db?text=Avatar' }}
                 />
               </div>
               <div className="text-center md:text-left">
@@ -163,7 +183,12 @@ const App = () => {
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {projects.map((project, index) => (
                 <a key={index} href={project.link} target="_blank" rel="noopener noreferrer" className="bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-gray-800 transition-transform duration-300 hover:scale-105 hover:shadow-2xl group">
-                  <img src={project.image} alt={project.title} className="w-full h-60 object-cover" />
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-60 object-cover"
+                    onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/600x400/1f2937/d1d5db?text=Project+Image' }}
+                  />
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-white group-hover:text-teal-400 transition-colors duration-300 flex items-center">
                       {project.title} <ExternalLink size={18} className="ml-2 transition-all duration-300 group-hover:translate-x-1" />

@@ -172,7 +172,7 @@ const App = () => {
               <div className="text-center md:text-left">
                 <h2 className="text-4xl md:text-5xl font-extrabold text-white">About Me</h2>
                 <p className="mt-6 text-lg text-gray-400">
-                  Hey there! I'm a passionate 3D artist with 4 years of experience that loves making 3D models look like 2D art as much as I can. As an instructor at VCAD, 
+                  Hey there! I'm a passionate 3D artist with 5 years of experience that loves making 3D models look like 2D art as much as I can. As an instructor at VCAD, 
                   I've honed my ability to teach and communicate complex artistic and technical concepts. My time as a Creative Director running VividBlue Ltd gave me invaluable experience in managing project workflows, collaborating with teams, and delivering on a shared vision.
                 </p>
                 <p className="mt-4 text-lg text-gray-400">

@@ -53,17 +53,24 @@ const App = () => {
   const projects = [
     {
     title: "Duskwitch: Heroic Soul - Creative Lead",
-    description: "After receiving funding from Weird Ghosts, developed a functional prototype as the creative director of Vivdblue Ltd. Currently upskilling as production is on hiatus, but the demo is available on Steam and itch.io",
+    description: "After receiving funding from Weird Ghosts, developed a functional prototype as the creative director of Vivdblue Ltd. Production is on hiatus, but the demo is available on Steam and itch.io",
     image: "https://www.vividblue.net/img/test_img.jpeg",
     tags: ["Unreal Engine", "Character Art", "Creative Director", "Game Projects"],
     link: "https://www.vividblue.net/"
     },
     {
       title: "Open Colosseum - Environment Models and Props",
-      description: "3D Environment Lead work done for NFTy Arcade's game: Open Colosseum. Exhibiting sculpting, retopology, and texturing for a game-ready asset.",
+      description: "3D Environment Lead work done for NFTy Arcade's game: Open Colosseum. Exhibiting sculpting, retopology, and texturing skills for game-ready assets.",
       image: "https://cdna.artstation.com/p/assets/covers/images/086/846/718/smaller_square/nate-tannis-nate-tannis-tbrender-014.jpg?1744216770",
       tags: ["Shipped Title", "Environment Art", "Maya", "Stylized", "ZBrush", "Substance Painter", "Unity"],
       link: "https://natetannis.artstation.com/projects/nJLwa6"
+    },
+ {
+      title: "UE5 Environment - Edge of the World",
+      description: "Stylized cityscape inspired by Blue Archive, real-time render in Unreal Engine 5.",
+      image: "https://i.postimg.cc/pd19Pyw8/Screenshot-20250810-002528-Chrome.jpg",
+      tags: ["Environment Art", "Maya", "Stylized", "Substance Painter", "Unreal Engine"],
+      link: "https://www.linkedin.com/posts/natetannis_im-thrilled-to-share-my-latest-project-activity-7281841204261003264-ZE0x?utm_source=social_share_video_v2&utm_medium=android_app&rcm=ACoAAC5Nhg8BTkoQ4wANmP1OzOvyTId7cYl2lF0&utm_campaign=copy_link"
     },
     {
       title: "Ambriel - Chibi VTuber Model",

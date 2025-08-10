@@ -138,7 +138,7 @@ const App = () => {
         <section id="hero" className="h-screen flex items-center justify-center text-center p-4">
           <div className="container mx-auto max-w-4xl">
             <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
-              3D Artist & Creative Director
+              3D Artist & Creative Lead
             </h1>
             <p className="mt-4 text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto">
               Creating cute and vibrant characters, immersive stylized environments and props for games and digital media.
